@@ -5,4 +5,3 @@ url="https://openlibrary.org/trending/now.json"
 response=requests.get(url)
 df=pd.DataFrame(response.json()['works'])[['title','author_name','language','first_publish_year','edition_count']]
 df.to_csv('openlib_data.csv',index=False)
-files.download('openlib.csv')
